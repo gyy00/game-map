@@ -1,1 +1,1 @@
-# game-map
+# Interactive Game Map
