@@ -28,8 +28,8 @@ def main():
     while True:
         #gets events, like mouse input
         for event in pygame.event.get():
-
-            mainMap.showMap(screen)
+            
+            mainMap.showMap(screen, event)
             
             #allows closing the window
             if event.type == QUIT:

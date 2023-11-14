@@ -19,14 +19,11 @@ def getImage(cur, name, table):
         cur.execute('SELECT [Image Path] FROM Locations WHERE Name = ?;', (name,))
         path = cur.fetchone()[0]
         return path
-    elif (table == 'Unicorns'):
-        cur.execute('SELECT [Image Path] FROM Unicorns WHERE Name = ?;', (name,))
+    elif (table == 'Buttons'):
+        cur.execute('SELECT [Image Path] FROM Buttons WHERE Name = ?;', (name,))
         path = cur.fetchone()[0]
         return path
-    elif (table == 'Drops'):
-        cur.execute('SELECT [Image Path] FROM Drops WHERE Name = ?;', (name,))
-        path = cur.fetchone()[0]
-        return path
+
 
 #Locations only
 def getBG(cur, name):
@@ -36,8 +33,11 @@ def getBG(cur, name):
 
       
 #offset is from the top left corner of the image
-def getOffset(cur, name):
-    cur.execute('SELECT [X Offset], [Y Offset] FROM Locations WHERE Name = ?;', (name,))
+def getOffset(cur, name, table):
+    if table == 'Locations':
+        cur.execute('SELECT [X Offset], [Y Offset] FROM Locations WHERE Name = ?;', (name,))
+    elif table == 'Buttons':
+        cur.execute('SELECT [X Offset], [Y Offset] FROM Buttons WHERE Name = ?;', (name,))
     offset = cur.fetchone()
     return offset
 
