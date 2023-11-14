@@ -1,4 +1,4 @@
 # Interactive Game Map
 
-Libraries: sqlite3, pygame, sys.
-Handrawn graphics. 
+- Libraries: sqlite3, pygame, sys.
+- Handrawn graphics. 
